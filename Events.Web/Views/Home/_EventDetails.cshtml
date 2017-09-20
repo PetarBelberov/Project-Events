@@ -1,0 +1,28 @@
+﻿@model Events.Web.Models.EventDetailsViewModel
+
+@if (Model.Description != null)
+{
+    <div class="description">Description @Model.Description</div>
+}
+else
+{
+    <p>No details</p>
+}
+@if (ViewBag.CanEdit || User.IsInRole("Admin"))
+{
+    @Html.ActionLink("Edit", "Edit", "Events", new { id = Model.Id },
+        new { @class = "btn btn-default" })
+    <span></span>
+    @Html.ActionLink("Delete", "Delete", "Events", new { id = Model.Id },
+        new { @class = "btn btn-default" })
+}
+
+    <a class="btn btn-default" href="" onclick="return hideElement()">Hide</a>
+
+    <script>
+        function hideElement() { 
+            window.location.reload();
+        }
+    </script>
+   
+
