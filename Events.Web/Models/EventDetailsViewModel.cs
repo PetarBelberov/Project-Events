@@ -14,8 +14,6 @@ namespace Events.Web.Models
 
         public string AuthorId { get; set; }
 
-      //  public IEnumerable<CommentViewModel> Comments { get; set; }
-
         public static Expression<Func<Event, EventDetailsViewModel>> ViewModel
         {
             get
@@ -23,8 +21,7 @@ namespace Events.Web.Models
                 return e => new EventDetailsViewModel()
                 {
                     Id = e.Id,
-                    Description = e.Description,
-                    // Comments = e.Comments.AsQueryable().Select(CommentViewModel.ViewModel),
+                    Description = e.Description,  
                     AuthorId = e.Author.Id
                 };
             }

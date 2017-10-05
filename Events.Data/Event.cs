@@ -37,6 +37,6 @@ namespace Events.Data
 
         public bool IsPublic { get; set; }
 
-       // public virtual ICollection<Comment> Comments { get; set; }
+      
     }
 }

@@ -25,12 +25,6 @@ namespace Events.Data.Migrations
                 this.CreateRole(context, "Admin");
                 this.CreateRole(context, "User");
 
-                // var adminEmail = "admin@admin.com";
-                // var adminUserName = "adminEmail";
-                // var adminFullName = "System Administrator";
-                // var adminPassword = "admin"; 
-                // string adminRole = "Administrator";
-
                
             }
 
@@ -101,11 +95,6 @@ namespace Events.Data.Migrations
                 StartDateTime = DateTime.Now.Date.AddDays(-2).AddHours(21).AddMinutes(30),
                 Duration = TimeSpan.FromHours(1.5),
                 Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
-                //Comments = new HashSet<Comment>()
-                //{
-                //    new Comment() { Text = "<Anonymous> comment"},
-                //    new Comment() { Text = "User comment", Author = context.Users.First() }
-                //}
             });
         }
 
@@ -142,22 +131,6 @@ namespace Events.Data.Migrations
             {
                 throw new Exception(string.Join("; ", result.Errors));
             }
-
-         // // Create the "Administrator" role
-         // var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
-         // var roleCreateResult = roleManager.Create(new IdentityRole(adminRole));
-         // if (!roleCreateResult.Succeeded)
-         // {
-         //     throw new Exception(string.Join("; ", roleCreateResult.Errors));
-         // }
-         //
-         // // Add the "admin" user to "Administrator" role
-         // var addAdminRoleResult = userManager.AddToRole(adminUser.Id, adminRole);
-         // if (!addAdminRoleResult.Succeeded)
-         // {
-         //     throw new Exception(string.Join("; ", addAdminRoleResult.Errors));
-         // }
-
         }
     }
 }
